@@ -3,11 +3,11 @@
 Sample microservice project
 
 ---> symmetric key
-default password = pdr@102030
+default password = testPass
 
 
 -----> asymmetric key
-$> keytool -genkeypair -alias config-server-key -keyalg RSA -keysize 4096 -sigalg SHA512withRSA -dname 'CN=Config Server,OU=Spring Cloud,O=ModernISC' -keypass my-k34-s3cr3t -keystore config-server.jks -storepass my-k34-s3cr3t
+$> keytool -genkeypair -alias config-server-key -keyalg RSA -keysize 4096 -sigalg SHA512withRSA -dname 'CN=Config Server,OU=Spring Cloud,O=Test' -keypass my-k34-s3cr3t -keystore config-server.jks -storepass my-k34-s3cr3t
 
 After that, we're adding the created keystore to our server's bootstrap.properties and re-run it:
 
