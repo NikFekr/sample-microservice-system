@@ -1,0 +1,13 @@
+${AnsiColor.BRIGHT_YELLOW}  ooooo         o8o   .o8
+${AnsiColor.BRIGHT_YELLOW}  `888'         `"'  "888
+${AnsiColor.BRIGHT_YELLOW}   888         oooo   888oooo.  oooo d8b  .oooo.   oooo d8b oooo    ooo
+${AnsiColor.BRIGHT_YELLOW}   888         `888   d88' `88b `888""8P `P  )88b  `888""8P  `88.  .8'
+${AnsiColor.BRIGHT_YELLOW}   888          888   888   888  888      .oP"888   888       `88..8'
+${AnsiColor.BRIGHT_YELLOW}   888       o  888   888   888  888     d8(  888   888        `888'
+${AnsiColor.BRIGHT_YELLOW}  o888ooooood8 o888o  `Y8bod8P' d888b    `Y888""8o d888b        .8'
+${AnsiColor.BRIGHT_YELLOW}                                                            .o..P'
+${AnsiColor.BRIGHT_YELLOW}                                                            `Y8P'
+
+
+${AnsiColor.BRIGHT_CYAN}:: ModernISC ::                                                               [0.0.1-SNAPSHOT]
+${AnsiColor.BRIGHT_GREEN} Powered by Spring Boot ${spring-boot.version}

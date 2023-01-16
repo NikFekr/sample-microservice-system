@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>library</artifactId>
+        <groupId>com.sample.library</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>library-service</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.sample.library</groupId>
+            <artifactId>auth-service-proxy</artifactId>
+            <version>${auth-service-proxy.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sample.library</groupId>
+            <artifactId>library-utility</artifactId>
+            <version>${library-utility.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrest.version}</version>
+<!--            <scope>test</scope>-->
+        </dependency>
+    </dependencies>
+
+</project>

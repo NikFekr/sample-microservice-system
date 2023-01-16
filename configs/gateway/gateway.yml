@@ -1,0 +1,93 @@
+configserver:
+  name: MISC Config Server
+  status: Connected to config server
+
+server:
+ port: 8383
+
+
+logging:
+  level:
+    com.netflix: warn
+    org.springframework.web: warn
+    com.optimagrowth: debug
+
+spring:
+  #  security:
+  #    user:
+  #      name: ${GATEWAY_SERVER_USER}
+  #      password: ${GATEWAY_SERVER_PASSWORD}
+  #    oauth2:
+  #      client:
+  #        registration:
+  #          gateway:
+  #            provider: keycloak
+  #            client-id: gateway
+  #            client-authentication-method: none
+  ##            authorization-grant-type: authoriztion_code
+  ##            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+  #            scope: opnid,profile,email
+  #        provider:
+  #          keycloack:
+  #            issuer-uri:
+  ##            authorization-uri:
+  ##            token-uri:
+  ##            user-info-uri:
+  ##            user-name-attribute: sub
+  ##            jwk-set-uri:
+
+  profiles:
+    active: "@activatedProperties@"
+  application:
+    name: gateway
+  cloud:
+    config:
+      username: ${CONFIG_SERVER_USR} # This is required only if your config server use authentication
+      password: ${CONFIG_SERVER_PWD} # This is required only if your config server use authentication
+      failFast: false
+      retry:
+        initialInterval: 3000
+        multiplier: 1.3
+        maxInterval: 10000
+        maxAttempts: 20
+      uri: ${SPRING_CLOUD_CONFIG_URL}
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+#      routes:
+#      - id: keycloak-service
+#        uri: http://localhost:8080
+##        http://localhost:8080/auth/realms/sabt-ahval-realm/protocol/openid-connect/token
+#        predicates:
+#        - Path=keycloak/**
+#        filters:
+#        - RewritePath=keycloak/(?<path>.*), /$\{path}
+#        - RemoveRequestHeader= Cookie,Set-Cookie
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh'
+
+jasypt:
+  encryptor:
+    algorithm: ${JASYPT_ALGORITHM}
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+
+###################################### Eureka config ########################################
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka-user}:${eureka-password}@${SPRING_CLOUD_EUREKA_URL}/eureka/ #http://admin:admin@localhost:8070
+
+eureka-user: ${EUREKA_SERVER_USER}
+eureka-password: ${EUREKA_SERVER_PASSWORD}
+
+###################################### Eureka config ########################################

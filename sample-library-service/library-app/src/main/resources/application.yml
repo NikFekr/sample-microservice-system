@@ -1,0 +1,108 @@
+##################################### config address #####################################################
+spring:
+  config:
+   location: classpath:/,file:./
+  profiles:
+    active: "@activatedProperties@"
+  application:
+    name: library
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}
+          jwk-set-uri: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/certs
+##########################################################################################################
+
+
+#################################### Log level ###########################################################
+logging:
+  level:
+    root: info
+  config: classpath:log4j2-spring.xml
+#################################### Log level ###########################################################
+
+
+##################################### Server Start #######################################################
+server:
+  port: 9090
+  ssl:
+    key-store-type: PKCS12
+    key-store: ${javax.net.ssl.keyStore}
+    key-store-password: ${javax.net.ssl.keyStorePassword}
+    trust-store: ${javax.net.ssl.trustStore}
+    trust-store-password: ${javax.net.ssl.trustStorePassword}
+    enabled: false
+    protocol: TLS
+    enabled-protocols: TLSv1.2
+    client-auth: none
+#    ciphers: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 ,TLS_DHE_RSA_WITH_AES_128_GCM_SHA256 ,TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 ,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384,TLS_DHE_RSA_WITH_AES_128_CBC_SHA256,TLS_DHE_RSA_WITH_AES_128_CBC_SHA,TLS_DHE_RSA_WITH_AES_256_CBC_SHA256,TLS_DHE_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA,TLS_RSA_WITH_CAMELLIA_256_CBC_SHA,TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA,TLS_RSA_WITH_CAMELLIA_128_CBC_SHA
+#    key-alias:
+
+
+application:
+  version: "@project.version@"
+
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: ${keycloak.resource}
+      client-secret: ${keycloak.credentials.secret}
+    path: /swagger-ui
+    enabled: true
+    disable-swagger-default-url: true
+    oauth2-redirect-url: ${KEYCLOAK_URL}:8085
+  oAuthFlow:
+    authorization-url: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/auth
+    token-url: ${oath2-token-path}
+  api-docs:
+    enabled: true
+  packages-to-scan: com.sample.library
+  paths-to-exclude:
+   - petstore.swagger.io/v2/swagger.json
+  show-actuator: true
+  show-login-endpoint: false
+##################################### Server Start #######################################################
+
+##################################### OAth2 security Config ###############################################
+keycloak:
+  realm: library-realm
+  auth-server-url: ${KEYCLOAK_URL}:8080/auth
+  ssl-required: external
+  resource: service-gateway
+  credentials:
+     secret: a9a2d70d-3387-4e52-bee5-f9b4430bca9b
+#     secret: a35c5edf-39ee-4684-aae3-3534fe573472
+  use-resource-role-mappings: true
+  bearer-only: true
+  principal-attribute: preferred_username
+  public-client: true
+  enabled: true
+
+oath2-token-path: ${keycloak.auth-server-url}/realms/${keycloak.realm}/protocol/openid-connect/token
+#  security-constraints:
+#    - authRoles:
+#      - user
+#    - securityCollections:
+#        - patterns:
+#            - /service-gateway/*
+
+
+##################################### OAth2 security Config ###############################################
+
+
+######################################## API Versions ##########################################
+service-gateway:
+  ui-version: 1.0
+######################################## API Versions ##########################################
+#eureka:
+#  instance:
+#    preferIpAddress: true
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://${eureka-user}:${eureka-password}@${SPRING_CLOUD_EUREKA_URL}/eureka/ #http://admin:admin@localhost:8070
+#
+#eureka-user: ${EUREKA_SERVER_USER}
+#eureka-password: ${EUREKA_SERVER_PASSWORD}

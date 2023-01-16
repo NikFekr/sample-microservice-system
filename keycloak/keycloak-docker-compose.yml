@@ -1,0 +1,54 @@
+version: '3.9'
+services:
+
+  ###################### MYSQL #######################
+
+#  keycloak:
+#    image: 127.0.0.1:8082/jboss/keycloak
+#    healthcheck:
+#      test: [ "CMD", "curl", "-f", "http://keycloak:8080" ]
+#      interval: 5s
+#      timeout: 5s
+#      retries: 10
+#    #    restart: always
+#    environment:
+#      KEYCLOAK_USER: admin
+#      KEYCLOAK_PASSWORD: admin
+#      JAVA_OPTS: >
+#        -Djgroups.bind_addr=127.0.0.1
+#        -Dkeycloak.profile.feature.scripts=enabled
+#        -Dkeycloak.profile.feature.upload_scripts=enabled
+#      #        -Djgroups.bind_addr=`hostname -I`
+#      DB_VENDOR: mariadb
+#      DB_ADDR: localhost
+#      DB_PORT: 3306
+#      DB_DATABASE: service-gw
+#      JDBC_PARAMS: '?useUnicode=true&characterEncoding=UTF-8&passwordCharacterEncoding=UTF-8&createDatabaseIfNotExist=true'
+#      DB_SCHEMA: service-gw
+#      DB_USER: keycloak
+#      DB_PASSWORD: password
+#    network_mode: "host"
+
+###################### ORACLE #######################
+
+  keycloak:
+    image: 127.0.0.1:8082/jboss/keycloak
+#    restart: always
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      JAVA_OPTS: >
+        -Djgroups.bind_addr=127.0.0.1
+        -Dkeycloak.profile.feature.scripts=enabled
+        -Dkeycloak.profile.feature.upload_scripts=enabled
+#        -Djgroups.bind_addr=`hostname -I`
+      DB_VENDOR: oracle
+      DB_ADDR: 192.168.50.211
+      DB_PORT: 1521
+      DB_DATABASE: abiskishdb
+      DB_SCHEMA: gw_serivce
+      DB_USER: gw_serivce
+      DB_PASSWORD: gw_serivce
+    volumes:
+      - "./jdbc:/opt/jboss/keycloak/modules/system/layers/base/com/oracle/jdbc/main/driver"
+    network_mode: "host"

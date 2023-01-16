@@ -1,0 +1,52 @@
+configserver:
+  name: MISC Config Server
+  status: Connected to config server
+
+server:
+  port: 8070
+  
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 5
+
+spring:
+  security:
+    user:
+      name: ${EUREKA_SERVER_USER}
+      password: ${EUREKA_SERVER_PASSWORD}
+  application:
+    name: eureka-service-discovery
+  profiles:
+    active: "@activatedProperties@"
+  cloud:
+    config:
+      username: ${CONFIG_SERVER_USR} # This is required only if your config server use authentication
+      password: ${CONFIG_SERVER_PWD} # This is required only if your config server use authentication
+      failFast: false
+      retry:
+        initialInterval: 3000
+        multiplier: 1.3
+        maxInterval: 10000
+        maxAttempts: 20
+      uri: ${SPRING_CLOUD_CONFIG_URL}
+    loadbalancer:
+      ribbon:
+        enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh'
+
+
+jasypt:
+  encryptor:
+    algorithm: ${JASYPT_ALGORITHM}
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator

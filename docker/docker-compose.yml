@@ -1,0 +1,130 @@
+version: '3.9'
+services:
+
+  config-server:
+    container_name: config-service
+    hostname: config-server
+#    build:
+#      context: ../configuration-service/docker
+#      dockerfile: Dockerfile
+    image: 127.0.0.1:8083/microservice-docker-configuration-service:${PROJECT_VERSION}
+    healthcheck:
+      test: [ "CMD", "curl", "-I", "http://config-server:8888" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    env_file: .env
+    command: java $JAVA_OPTS -jar configuration-service.jar $APP_OPTS
+    ports:
+      - 8888:8888
+    networks:
+      spring-cloud-network:
+        aliases:
+          - config-server
+    volumes:
+      - ../configs:/configs
+    environment:
+      SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCHLOCATIONS : /configs/modernisc-service-gateway, /configs/eureka-service-discovery, /configs/gateway
+
+
+  eureka-server:
+    container_name: eureka-service
+    hostname: eureka-server
+#    build:
+#      context: ../service-discovery/docker
+#      dockerfile: Dockerfile
+    image: 127.0.0.1:8083/microservice-docker-service-discovery:${PROJECT_VERSION}
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://eureka-server:8070" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    env_file: .env
+    command: java $JAVA_OPTS -jar service-discovery.jar $APP_OPTS
+    ports:
+      - 8070:8070
+    depends_on:
+       config-server :
+         condition: service_healthy
+    networks:
+      spring-cloud-network:
+        aliases:
+          - eureka-server
+    environment:
+      SPRING_PROFILES_ACTIVE: "prod"
+
+
+  gateway-server:
+    container_name: gateway-service
+    hostname: gateway-server
+#    build:
+#      context: ../gateway/docker
+#      dockerfile: Dockerfile
+    image: 127.0.0.1:8083/microservice-docker-gateway-service:${PROJECT_VERSION}
+#    healthcheck:
+#      test: [ "CMD", "telnet", "gateway-server", "8383" ]
+#      interval: 5s
+#      timeout: 5s
+#      retries: 10
+    env_file: .env
+    command: java $JAVA_OPTS -jar gateway-service.jar $APP_OPTS
+    depends_on:
+       config-server:
+         condition: service_healthy
+       eureka-server:
+         condition: service_healthy
+    ports:
+      - 8383:8383
+    environment:
+      SPRING_PROFILES_ACTIVE: "prod"
+    networks:
+      spring-cloud-network:
+        aliases:
+          - gateway-server
+
+
+  keycloak-server:
+    extends:
+      file: ../keycloak/docker-compose.yml
+      service: keycloak-server
+    networks:
+      spring-cloud-network:
+        aliases:
+          - keycloak-server
+
+  misc-service-gateway-server:
+    container_name: misc-service-gateway-service
+    hostname: misc-service-gateway-server
+#    build:
+#      context: ../modernisc-service-gateway/service-gateway-app/docker
+#      dockerfile: Dockerfile
+    image: 127.0.0.1:8083/microservice-docker-modernisc-service-gateway:${PROJECT_VERSION}
+    env_file: .env
+    command: java $JAVA_OPTS -jar modernisc-service-gateway.jar $APP_OPTS
+    volumes:
+      - ${LOG_DIRECTORY}:/logs
+    depends_on:
+      config-server:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      keycloak-server:
+        condition: service_healthy
+      gateway-server:
+        condition: service_started
+    ports:
+      - 9090:9090
+      - 8020:8020
+    environment:
+      SPRING_PROFILES_ACTIVE: "prod"
+
+    networks:
+      spring-cloud-network:
+        aliases:
+          - misc-service-gateway-server
+
+
+networks:
+  spring-cloud-network:
+    driver: bridge
+    external: true

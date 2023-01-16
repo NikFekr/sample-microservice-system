@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    database: ORACLE
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+  datasource:
+    platform: oracle
+    url: jdbc:oracle:thin:@192.168.28.37:1521/servicegatewaydb
+    username: foo
+    password: bar
+    driver-class-name: oracle.jdbc.driver.OracleDriver

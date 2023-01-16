@@ -1,0 +1,4 @@
+service-gateway:
+  login:
+    username: ui-app
+    password: Aa123456@

@@ -1,0 +1,4 @@
+[2021-03-28 00:26:49.487] [parisa-pc] [SpringContextShutdownHook] INFO o.s.s.c.ThreadPoolTaskExecutor@shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-03-28 00:26:49.644] [parisa-pc] [SpringContextShutdownHook] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-28 00:26:49.926] [parisa-pc] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:350 - HikariPool-1 - Shutdown initiated...
+[2021-03-28 00:26:50.064] [parisa-pc] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:352 - HikariPool-1 - Shutdown completed.

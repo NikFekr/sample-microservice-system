@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration threshold="all"  monitorInterval="60">
+    <Properties>
+        <Property name="PID">????</Property>
+        <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xwEx</Property>
+        <Property name="LOG_LEVEL_PATTERN">%5p</Property>
+        <Property name="LOG_DATEFORMAT_PATTERN">yyyy-MM-dd HH:mm:ss.SSS</Property>
+        <Property name="CONSOLE_LOG_PATTERN">%clr{%d{${LOG_DATEFORMAT_PATTERN}}}{faint} [%X{traceId},%X{parentId},%X{spanId}] [%X{host}] %clr{${LOG_LEVEL_PATTERN}} %clr{${sys:PID}}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+        <Property name="FILE_LOG_PATTERN">%d{${LOG_DATEFORMAT_PATTERN}} [%X{traceId},%X{parentId},%X{spanId}] [%X{host}] ${LOG_LEVEL_PATTERN} ${sys:PID} --- [%15.15t] %-40.40c{1.} : %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+    </Properties>
+    <Appenders>
+        <Console name="SystemOut" target="SYSTEM_OUT">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}" />
+        </Console>
+        <RollingFile
+                name="RollingInfoFile"
+                fileName="../logs/library-info.log"
+                filePattern="../logs/library-info.log.%d{yyyyMMdd.HH}.gz"
+                ignoreExceptions="false">
+            <PatternLayout pattern="${sys:FILE_LOG_PATTERN}" charset="UTF-8"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+
+        <RollingFile
+                name="RollingErrorFile"
+                fileName="../logs/library-error.log"
+                filePattern="../logs/library-error.log.%d{yyyyMMdd.HH}.gz"
+                ignoreExceptions="false">
+            <PatternLayout pattern="${sys:FILE_LOG_PATTERN}" charset="UTF-8"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+
+        <RollingFile
+                name="RollingDebugFile"
+                fileName="../logs/library-debug.log"
+                filePattern="../logs/library-debug.log.%d{yyyyMMdd.HH}.gz"
+                ignoreExceptions="false">
+            <PatternLayout pattern="${sys:FILE_LOG_PATTERN}" charset="UTF-8"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+
+        <RollingFile
+                name="RollingTraceFile"
+                fileName="../logs/library-trace.log"
+                filePattern="../logs/library-trace.log.%d{yyyyMMdd.HH}.gz"
+                ignoreExceptions="false">
+            <PatternLayout pattern="${sys:FILE_LOG_PATTERN}" charset="UTF-8"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+
+        <RollingFile
+                name="RollingSecurityFile"
+                fileName="../logs/library-security.log"
+                filePattern="../logs/library-security.log.%d{yyyyMMdd.HH}.gz"
+                ignoreExceptions="false">
+            <PatternLayout pattern="${sys:FILE_LOG_PATTERN}" charset="UTF-8"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+
+
+        <!--<JDBC name="DB" tableName="APP_LOGS">-->
+        <!--<ConnectionFactory class="com.misc.bis.Log4j2ConnectionFactory" method="getConnection" />-->
+        <!--<Column name="START_TIME" pattern="%X{START_TIME}" />-->
+        <!--<Column name="CALLER_ADDR" pattern="%X{CALLER_ADDR}"/>-->
+        <!--<Column name="USERNAME" pattern="%X{USERNAME}"/>-->
+        <!--<Column name="DURATION" pattern="%X{DURATION}" isUnicode="false"/>-->
+        <!--<Column name="END_TIME" pattern="%X{END_TIME}"/>-->
+        <!--<Column name="METHOD" pattern="%X{METHOD}"/>-->
+        <!--<Column name="PARAMETERS" pattern="%X{PARAMETERS}"/>-->
+        <!--<Column name="RETURN_VALUE" pattern="%X{RETURN_VALUE}"/>-->
+        <!--<Column name="PACKAGE" pattern="%X{CLASS_NAME}"/>-->
+        <!--<Column name="ERROR" pattern="%X{ERROR}"/>-->
+        <!--</JDBC>-->
+
+        <Async name="ASYNCAppender">
+            <AppenderRef ref="SystemOut" level="all"/>
+            <!--<AppenderRef ref="DB" level="info"/>-->
+            <!--<AppenderRef ref="DB" level="info"/>-->
+            <AppenderRef ref="RollingInfoFile" level="info"/>
+            <AppenderRef ref="RollingErrorFile" level="error"/>
+<!--            <AppenderRef ref="RollingDebugFile" level="debug"/>-->
+<!--            <AppenderRef ref="RollingTraceFile" level="trace"/>-->
+        </Async>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="org.apache.catalina.startup.DigesterFactory" level="error" />
+        <Logger name="org.apache.catalina.util.LifecycleBase" level="error" />
+        <Logger name="org.apache.coyote.http11.Http11NioProtocol" level="warn" />
+        <logger name="org.apache.sshd.common.util.SecurityUtils" level="warn"/>
+        <Logger name="org.apache.tomcat.util.net.NioSelectorPool" level="warn" />
+        <Logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="error" />
+        <Logger name="org.hibernate.validator.internal.util.Version" level="warn" />
+        <logger name="org.springframework.boot.actuate.endpoint.jmx" level="warn"/>
+        <logger name="com.pdr.bis.common.rmi.RmiServiceExporter" level="INFO" additivity="false"/>
+        <logger name="com.mchange" level="INFO" additivity="false"/>
+        <logger name="com.pdr.bis.common.ui.cleaner.TempCleaner" level="INFO" additivity="false"/>
+        <logger name="org.hibernate.orm.deprecation" level="ERROR"/>
+
+<!--        <logger name="org.hibernate.SQL" level="DEBUG"/>-->
+<!--        <logger name="org.hibernate.type" level="TRACE"/>-->
+
+        <logger name="com.sample.security.log" >
+            <appender-ref ref="RollingSecurityFile"/>
+        </logger>
+
+        <Root level="info">
+            <appender-ref ref="ASYNCAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
+

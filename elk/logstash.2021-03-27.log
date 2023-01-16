@@ -1,0 +1,573 @@
+[2021-03-27 11:38:13.556] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarting:55 - Starting RoleBaseAuthenticationServiceApplication using Java 11.0.2 on pc-parsa with PID 31093 (/home/parisa/MyProjects/microservice/role-base-authentication-service/target/classes started by parisa in /home/parisa/MyProjects/microservice/role-base-authentication-service)
+[2021-03-27 11:38:13.558] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStartupProfileInfo:664 - The following profiles are active: dev
+[2021-03-27 11:38:13.586] [pc-parsa] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Fetching config from server at : http://localhost:8888/
+[2021-03-27 11:38:13.587] [pc-parsa] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Located environment: name=rolebaseservice, profiles=[dev], label=null, version=null, state=null
+[2021-03-27 11:38:14.192] [pc-parsa] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2021-03-27 11:38:14.227] [pc-parsa] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:188 - Finished Spring Data repository scanning in 29 ms. Found 3 JPA repository interfaces.
+[2021-03-27 11:38:14.378] [pc-parsa] [main] INFO o.s.cloud.context.scope.GenericScope@setSerializationId:283 - BeanFactory id=dafcf6b0-b059-3ab4-a31c-ee888c5cf01c
+[2021-03-27 11:38:14.709] [pc-parsa] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@initialize:108 - Tomcat initialized with port(s): 8484 (http)
+[2021-03-27 11:38:14.714] [pc-parsa] [main] INFO o.a.coyote.http11.Http11NioProtocol@log:173 - Initializing ProtocolHandler ["http-nio-8484"]
+[2021-03-27 11:38:14.714] [pc-parsa] [main] INFO o.a.catalina.core.StandardService@log:173 - Starting service [Tomcat]
+[2021-03-27 11:38:14.714] [pc-parsa] [main] INFO o.a.catalina.core.StandardEngine@log:173 - Starting Servlet engine: [Apache Tomcat/9.0.43]
+[2021-03-27 11:38:14.788] [pc-parsa] [main] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring embedded WebApplicationContext
+[2021-03-27 11:38:14.788] [pc-parsa] [main] INFO o.s.b.w.s.c.ServletWebServerApplicationContext@prepareWebApplicationContext:289 - Root WebApplicationContext: initialization completed in 1200 ms
+[2021-03-27 11:38:14.914] [pc-parsa] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:110 - HikariPool-1 - Starting...
+[2021-03-27 11:38:15.077] [pc-parsa] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:123 - HikariPool-1 - Start completed.
+[2021-03-27 11:38:15.081] [pc-parsa] [main] INFO o.s.b.a.h.H2ConsoleAutoConfiguration@lambda$h2Console$0:68 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./h2-database/h2/data/roleBaseService'
+[2021-03-27 11:38:15.470] [pc-parsa] [main] INFO o.h.jpa.internal.util.LogHelper@logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2021-03-27 11:38:15.497] [pc-parsa] [main] INFO org.hibernate.Version@logVersion:44 - HHH000412: Hibernate ORM core version 5.4.28.Final
+[2021-03-27 11:38:15.565] [pc-parsa] [main] INFO o.h.annotations.common.Version@<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-03-27 11:38:15.633] [pc-parsa] [main] INFO org.hibernate.dialect.Dialect@<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2021-03-27 11:38:16.124] [pc-parsa] [main] INFO o.h.e.t.j.p.i.JtaPlatformInitiator@initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-03-27 11:38:16.131] [pc-parsa] [main] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 11:38:16.228] [pc-parsa] [main] WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration@openEntityManagerInViewInterceptor:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2021-03-27 11:38:16.311] [pc-parsa] [main] INFO o.s.b.a.s.s.UserDetailsServiceAutoConfiguration@getOrDeducePassword:86 - 
+
+Using generated security password: 4c46a207-3e78-43fc-935c-4b79287d6f40
+
+[2021-03-27 11:38:16.375] [pc-parsa] [main] INFO o.s.s.web.DefaultSecurityFilterChain@<init>:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d273300, org.springframework.security.web.context.SecurityContextPersistenceFilter@4feea86f, org.springframework.security.web.header.HeaderWriterFilter@276b68af, org.springframework.security.web.authentication.logout.LogoutFilter@5e08ed28, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@578483bd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a35efac, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3fe7c87c, org.springframework.security.web.session.SessionManagementFilter@3d72abea, org.springframework.security.web.access.ExceptionTranslationFilter@593db293, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a457aa1]
+[2021-03-27 11:38:16.503] [pc-parsa] [main] INFO o.s.s.c.ThreadPoolTaskExecutor@initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-03-27 11:38:17.094] [pc-parsa] [main] INFO o.s.b.a.e.web.EndpointLinksResolver@<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2021-03-27 11:38:17.155] [pc-parsa] [main] INFO o.a.coyote.http11.Http11NioProtocol@log:173 - Starting ProtocolHandler ["http-nio-8484"]
+[2021-03-27 11:38:17.165] [pc-parsa] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@start:220 - Tomcat started on port(s): 8484 (http) with context path ''
+[2021-03-27 11:38:17.184] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarted:61 - Started RoleBaseAuthenticationServiceApplication in 4.4 seconds (JVM running for 4.961)
+[2021-03-27 11:38:17.190] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:89 - 
+----------------------------------------------------------
+	Application 'rolebaseservice' is running! Access URLs:
+	Local: 		http://localhost:8484/
+	External: 	http://172.31.15.22:8484/
+	Profile(s): 	[dev]
+----------------------------------------------------------
+[2021-03-27 11:38:17.190] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:108 - 
+----------------------------------------------------------
+	Config Server: 	Not found or not setup for this application
+----------------------------------------------------------
+[2021-03-27 11:38:17.555] [pc-parsa] [RMI TCP Connection(1)-172.31.15.22] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-03-27 11:38:17.556] [pc-parsa] [RMI TCP Connection(1)-172.31.15.22] INFO o.s.web.servlet.DispatcherServlet@initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+[2021-03-27 11:38:17.557] [pc-parsa] [RMI TCP Connection(1)-172.31.15.22] INFO o.s.web.servlet.DispatcherServlet@initServletBean:547 - Completed initialization in 1 ms
+[2021-03-27 11:38:34.564] [pc-parsa] [http-nio-8484-exec-1] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 11:38:34 IRDT 2021
+[2021-03-27 11:51:55.889] [pc-parsa] [http-nio-8484-exec-3] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 11:51:55 IRDT 2021
+[2021-03-27 12:02:19.790] [pc-parsa] [SpringContextShutdownHook] INFO o.s.s.c.ThreadPoolTaskExecutor@shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-03-27 12:02:19.791] [pc-parsa] [SpringContextShutdownHook] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 12:02:19.795] [pc-parsa] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:350 - HikariPool-1 - Shutdown initiated...
+[2021-03-27 12:02:19.805] [pc-parsa] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:352 - HikariPool-1 - Shutdown completed.
+[2021-03-27 12:02:28.489] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarting:55 - Starting RoleBaseAuthenticationServiceApplication using Java 11.0.2 on pc-parsa with PID 1828 (/home/parisa/MyProjects/microservice/role-base-authentication-service/target/classes started by parisa in /home/parisa/MyProjects/microservice/role-base-authentication-service)
+[2021-03-27 12:02:28.491] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStartupProfileInfo:664 - The following profiles are active: dev
+[2021-03-27 12:02:28.519] [pc-parsa] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Fetching config from server at : http://localhost:8888/
+[2021-03-27 12:02:28.519] [pc-parsa] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Located environment: name=rolebaseservice, profiles=[dev], label=null, version=null, state=null
+[2021-03-27 12:02:29.112] [pc-parsa] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2021-03-27 12:02:29.149] [pc-parsa] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:188 - Finished Spring Data repository scanning in 32 ms. Found 3 JPA repository interfaces.
+[2021-03-27 12:02:29.334] [pc-parsa] [main] INFO o.s.cloud.context.scope.GenericScope@setSerializationId:283 - BeanFactory id=dafcf6b0-b059-3ab4-a31c-ee888c5cf01c
+[2021-03-27 12:02:29.744] [pc-parsa] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@initialize:108 - Tomcat initialized with port(s): 8484 (http)
+[2021-03-27 12:02:29.748] [pc-parsa] [main] INFO o.a.coyote.http11.Http11NioProtocol@log:173 - Initializing ProtocolHandler ["http-nio-8484"]
+[2021-03-27 12:02:29.749] [pc-parsa] [main] INFO o.a.catalina.core.StandardService@log:173 - Starting service [Tomcat]
+[2021-03-27 12:02:29.749] [pc-parsa] [main] INFO o.a.catalina.core.StandardEngine@log:173 - Starting Servlet engine: [Apache Tomcat/9.0.43]
+[2021-03-27 12:02:29.837] [pc-parsa] [main] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring embedded WebApplicationContext
+[2021-03-27 12:02:29.838] [pc-parsa] [main] INFO o.s.b.w.s.c.ServletWebServerApplicationContext@prepareWebApplicationContext:289 - Root WebApplicationContext: initialization completed in 1318 ms
+[2021-03-27 12:02:29.985] [pc-parsa] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:110 - HikariPool-1 - Starting...
+[2021-03-27 12:02:30.142] [pc-parsa] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:123 - HikariPool-1 - Start completed.
+[2021-03-27 12:02:30.146] [pc-parsa] [main] INFO o.s.b.a.h.H2ConsoleAutoConfiguration@lambda$h2Console$0:68 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./h2-database/h2/data/roleBaseService'
+[2021-03-27 12:02:30.556] [pc-parsa] [main] INFO o.h.jpa.internal.util.LogHelper@logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2021-03-27 12:02:30.584] [pc-parsa] [main] INFO org.hibernate.Version@logVersion:44 - HHH000412: Hibernate ORM core version 5.4.28.Final
+[2021-03-27 12:02:30.657] [pc-parsa] [main] INFO o.h.annotations.common.Version@<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-03-27 12:02:30.720] [pc-parsa] [main] INFO org.hibernate.dialect.Dialect@<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2021-03-27 12:02:31.210] [pc-parsa] [main] INFO o.h.e.t.j.p.i.JtaPlatformInitiator@initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-03-27 12:02:31.217] [pc-parsa] [main] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 12:02:31.329] [pc-parsa] [main] WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration@openEntityManagerInViewInterceptor:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2021-03-27 12:02:31.420] [pc-parsa] [main] INFO o.s.b.a.s.s.UserDetailsServiceAutoConfiguration@getOrDeducePassword:86 - 
+
+Using generated security password: 243bed34-72e8-42bd-9dcb-3b61c254ca3e
+
+[2021-03-27 12:02:31.481] [pc-parsa] [main] INFO o.s.s.web.DefaultSecurityFilterChain@<init>:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@552b7481, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b45a3e6, org.springframework.security.web.header.HeaderWriterFilter@3c5d60db, org.springframework.security.web.authentication.logout.LogoutFilter@25ee3cd6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26c494d7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@608b74f3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@475b796d, org.springframework.security.web.session.SessionManagementFilter@b2db8bc, org.springframework.security.web.access.ExceptionTranslationFilter@5b132063, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@602d5417]
+[2021-03-27 12:02:31.596] [pc-parsa] [main] INFO o.s.s.c.ThreadPoolTaskExecutor@initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-03-27 12:02:32.182] [pc-parsa] [main] INFO o.s.b.a.e.web.EndpointLinksResolver@<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2021-03-27 12:02:32.244] [pc-parsa] [main] INFO o.a.coyote.http11.Http11NioProtocol@log:173 - Starting ProtocolHandler ["http-nio-8484"]
+[2021-03-27 12:02:32.256] [pc-parsa] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@start:220 - Tomcat started on port(s): 8484 (http) with context path ''
+[2021-03-27 12:02:32.278] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarted:61 - Started RoleBaseAuthenticationServiceApplication in 4.626 seconds (JVM running for 5.172)
+[2021-03-27 12:02:32.284] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:89 - 
+----------------------------------------------------------
+	Application 'rolebaseservice' is running! Access URLs:
+	Local: 		http://localhost:8484/
+	External: 	http://172.31.15.22:8484/
+	Profile(s): 	[dev]
+----------------------------------------------------------
+[2021-03-27 12:02:32.285] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:108 - 
+----------------------------------------------------------
+	Config Server: 	Not found or not setup for this application
+----------------------------------------------------------
+[2021-03-27 12:02:32.371] [pc-parsa] [RMI TCP Connection(2)-172.31.15.22] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-03-27 12:02:32.372] [pc-parsa] [RMI TCP Connection(2)-172.31.15.22] INFO o.s.web.servlet.DispatcherServlet@initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+[2021-03-27 12:02:32.373] [pc-parsa] [RMI TCP Connection(2)-172.31.15.22] INFO o.s.web.servlet.DispatcherServlet@initServletBean:547 - Completed initialization in 1 ms
+[2021-03-27 12:02:40.869] [pc-parsa] [http-nio-8484-exec-1] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 12:02:40 IRDT 2021
+[2021-03-27 12:07:34.097] [pc-parsa] [SpringContextShutdownHook] INFO o.s.s.c.ThreadPoolTaskExecutor@shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-03-27 12:07:34.098] [pc-parsa] [SpringContextShutdownHook] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 12:07:34.103] [pc-parsa] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:350 - HikariPool-1 - Shutdown initiated...
+[2021-03-27 12:07:34.179] [pc-parsa] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:352 - HikariPool-1 - Shutdown completed.
+[2021-03-27 12:07:36.946] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarting:55 - Starting RoleBaseAuthenticationServiceApplication using Java 11.0.2 on pc-parsa with PID 2845 (/home/parisa/MyProjects/microservice/role-base-authentication-service/target/classes started by parisa in /home/parisa/MyProjects/microservice/role-base-authentication-service)
+[2021-03-27 12:07:36.948] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStartupProfileInfo:664 - The following profiles are active: dev
+[2021-03-27 12:07:36.974] [pc-parsa] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Fetching config from server at : http://localhost:8888/
+[2021-03-27 12:07:36.974] [pc-parsa] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Located environment: name=rolebaseservice, profiles=[dev], label=null, version=null, state=null
+[2021-03-27 12:07:37.560] [pc-parsa] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2021-03-27 12:07:37.595] [pc-parsa] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:188 - Finished Spring Data repository scanning in 29 ms. Found 3 JPA repository interfaces.
+[2021-03-27 12:07:37.749] [pc-parsa] [main] INFO o.s.cloud.context.scope.GenericScope@setSerializationId:283 - BeanFactory id=dafcf6b0-b059-3ab4-a31c-ee888c5cf01c
+[2021-03-27 12:07:38.073] [pc-parsa] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@initialize:108 - Tomcat initialized with port(s): 8484 (http)
+[2021-03-27 12:07:38.079] [pc-parsa] [main] INFO o.a.coyote.http11.Http11NioProtocol@log:173 - Initializing ProtocolHandler ["http-nio-8484"]
+[2021-03-27 12:07:38.079] [pc-parsa] [main] INFO o.a.catalina.core.StandardService@log:173 - Starting service [Tomcat]
+[2021-03-27 12:07:38.079] [pc-parsa] [main] INFO o.a.catalina.core.StandardEngine@log:173 - Starting Servlet engine: [Apache Tomcat/9.0.43]
+[2021-03-27 12:07:38.157] [pc-parsa] [main] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring embedded WebApplicationContext
+[2021-03-27 12:07:38.158] [pc-parsa] [main] INFO o.s.b.w.s.c.ServletWebServerApplicationContext@prepareWebApplicationContext:289 - Root WebApplicationContext: initialization completed in 1183 ms
+[2021-03-27 12:07:38.290] [pc-parsa] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:110 - HikariPool-1 - Starting...
+[2021-03-27 12:07:38.439] [pc-parsa] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:123 - HikariPool-1 - Start completed.
+[2021-03-27 12:07:38.443] [pc-parsa] [main] INFO o.s.b.a.h.H2ConsoleAutoConfiguration@lambda$h2Console$0:68 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./h2-database/h2/data/roleBaseService'
+[2021-03-27 12:07:38.843] [pc-parsa] [main] INFO o.h.jpa.internal.util.LogHelper@logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2021-03-27 12:07:38.869] [pc-parsa] [main] INFO org.hibernate.Version@logVersion:44 - HHH000412: Hibernate ORM core version 5.4.28.Final
+[2021-03-27 12:07:38.940] [pc-parsa] [main] INFO o.h.annotations.common.Version@<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-03-27 12:07:39.003] [pc-parsa] [main] INFO org.hibernate.dialect.Dialect@<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2021-03-27 12:07:39.474] [pc-parsa] [main] INFO o.h.e.t.j.p.i.JtaPlatformInitiator@initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-03-27 12:07:39.481] [pc-parsa] [main] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 12:07:39.570] [pc-parsa] [main] WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration@openEntityManagerInViewInterceptor:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2021-03-27 12:07:39.648] [pc-parsa] [main] INFO o.s.b.a.s.s.UserDetailsServiceAutoConfiguration@getOrDeducePassword:86 - 
+
+Using generated security password: 8bd7b767-a0c3-42f6-9945-6af2d0b1b0a0
+
+[2021-03-27 12:07:39.713] [pc-parsa] [main] INFO o.s.s.web.DefaultSecurityFilterChain@<init>:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66ca8882, org.springframework.security.web.context.SecurityContextPersistenceFilter@3e9e7a70, org.springframework.security.web.header.HeaderWriterFilter@59d6a4d1, org.springframework.security.web.authentication.logout.LogoutFilter@2a4a95c4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33602729, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@55854382, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4c0989f7, org.springframework.security.web.session.SessionManagementFilter@1899c7ae, org.springframework.security.web.access.ExceptionTranslationFilter@ab11e76, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@47d7e8b5]
+[2021-03-27 12:07:39.833] [pc-parsa] [main] INFO o.s.s.c.ThreadPoolTaskExecutor@initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-03-27 12:07:40.397] [pc-parsa] [main] INFO o.s.b.a.e.web.EndpointLinksResolver@<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2021-03-27 12:07:40.451] [pc-parsa] [main] INFO o.a.coyote.http11.Http11NioProtocol@log:173 - Starting ProtocolHandler ["http-nio-8484"]
+[2021-03-27 12:07:40.461] [pc-parsa] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@start:220 - Tomcat started on port(s): 8484 (http) with context path ''
+[2021-03-27 12:07:40.480] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarted:61 - Started RoleBaseAuthenticationServiceApplication in 4.32 seconds (JVM running for 4.91)
+[2021-03-27 12:07:40.485] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:89 - 
+----------------------------------------------------------
+	Application 'rolebaseservice' is running! Access URLs:
+	Local: 		http://localhost:8484/
+	External: 	http://172.31.15.22:8484/
+	Profile(s): 	[dev]
+----------------------------------------------------------
+[2021-03-27 12:07:40.486] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:108 - 
+----------------------------------------------------------
+	Config Server: 	Not found or not setup for this application
+----------------------------------------------------------
+[2021-03-27 12:07:40.857] [pc-parsa] [RMI TCP Connection(3)-172.31.15.22] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-03-27 12:07:40.858] [pc-parsa] [RMI TCP Connection(3)-172.31.15.22] INFO o.s.web.servlet.DispatcherServlet@initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+[2021-03-27 12:07:40.859] [pc-parsa] [RMI TCP Connection(3)-172.31.15.22] INFO o.s.web.servlet.DispatcherServlet@initServletBean:547 - Completed initialization in 1 ms
+[2021-03-27 12:07:55.447] [pc-parsa] [http-nio-8484-exec-1] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 12:07:55 IRDT 2021
+[2021-03-27 12:15:00.839] [pc-parsa] [SpringContextShutdownHook] INFO o.s.s.c.ThreadPoolTaskExecutor@shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-03-27 12:15:00.840] [pc-parsa] [SpringContextShutdownHook] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 12:15:00.844] [pc-parsa] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:350 - HikariPool-1 - Shutdown initiated...
+[2021-03-27 12:15:00.918] [pc-parsa] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:352 - HikariPool-1 - Shutdown completed.
+[2021-03-27 12:15:04.255] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarting:55 - Starting RoleBaseAuthenticationServiceApplication using Java 11.0.2 on pc-parsa with PID 4017 (/home/parisa/MyProjects/microservice/role-base-authentication-service/target/classes started by parisa in /home/parisa/MyProjects/microservice/role-base-authentication-service)
+[2021-03-27 12:15:04.257] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStartupProfileInfo:664 - The following profiles are active: dev
+[2021-03-27 12:15:04.288] [pc-parsa] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Fetching config from server at : http://localhost:8888/
+[2021-03-27 12:15:04.288] [pc-parsa] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Located environment: name=rolebaseservice, profiles=[dev], label=null, version=null, state=null
+[2021-03-27 12:15:04.946] [pc-parsa] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2021-03-27 12:15:04.983] [pc-parsa] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:188 - Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
+[2021-03-27 12:15:05.162] [pc-parsa] [main] INFO o.s.cloud.context.scope.GenericScope@setSerializationId:283 - BeanFactory id=dafcf6b0-b059-3ab4-a31c-ee888c5cf01c
+[2021-03-27 12:15:05.573] [pc-parsa] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@initialize:108 - Tomcat initialized with port(s): 8484 (http)
+[2021-03-27 12:15:05.579] [pc-parsa] [main] INFO o.a.coyote.http11.Http11NioProtocol@log:173 - Initializing ProtocolHandler ["http-nio-8484"]
+[2021-03-27 12:15:05.580] [pc-parsa] [main] INFO o.a.catalina.core.StandardService@log:173 - Starting service [Tomcat]
+[2021-03-27 12:15:05.580] [pc-parsa] [main] INFO o.a.catalina.core.StandardEngine@log:173 - Starting Servlet engine: [Apache Tomcat/9.0.43]
+[2021-03-27 12:15:05.637] [pc-parsa] [main] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring embedded WebApplicationContext
+[2021-03-27 12:15:05.638] [pc-parsa] [main] INFO o.s.b.w.s.c.ServletWebServerApplicationContext@prepareWebApplicationContext:289 - Root WebApplicationContext: initialization completed in 1348 ms
+[2021-03-27 12:15:05.797] [pc-parsa] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:110 - HikariPool-1 - Starting...
+[2021-03-27 12:15:05.983] [pc-parsa] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:123 - HikariPool-1 - Start completed.
+[2021-03-27 12:15:05.988] [pc-parsa] [main] INFO o.s.b.a.h.H2ConsoleAutoConfiguration@lambda$h2Console$0:68 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./h2-database/h2/data/roleBaseService'
+[2021-03-27 12:15:06.499] [pc-parsa] [main] INFO o.h.jpa.internal.util.LogHelper@logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2021-03-27 12:15:06.540] [pc-parsa] [main] INFO org.hibernate.Version@logVersion:44 - HHH000412: Hibernate ORM core version 5.4.28.Final
+[2021-03-27 12:15:06.635] [pc-parsa] [main] INFO o.h.annotations.common.Version@<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-03-27 12:15:06.708] [pc-parsa] [main] INFO org.hibernate.dialect.Dialect@<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2021-03-27 12:15:07.244] [pc-parsa] [main] INFO o.h.e.t.j.p.i.JtaPlatformInitiator@initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-03-27 12:15:07.255] [pc-parsa] [main] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 12:15:07.354] [pc-parsa] [main] WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration@openEntityManagerInViewInterceptor:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2021-03-27 12:15:07.436] [pc-parsa] [main] INFO o.s.b.a.s.s.UserDetailsServiceAutoConfiguration@getOrDeducePassword:86 - 
+
+Using generated security password: 16149ed2-756f-4da1-b886-afb8f755904e
+
+[2021-03-27 12:15:07.504] [pc-parsa] [main] INFO o.s.s.web.DefaultSecurityFilterChain@<init>:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4446e1d9, org.springframework.security.web.context.SecurityContextPersistenceFilter@2a10407e, org.springframework.security.web.header.HeaderWriterFilter@3d72abea, org.springframework.security.web.authentication.logout.LogoutFilter@43a9988a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@279e4506, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@ea3491d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f13720f, org.springframework.security.web.session.SessionManagementFilter@72b4ecb2, org.springframework.security.web.access.ExceptionTranslationFilter@67544105, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3d273300]
+[2021-03-27 12:15:07.628] [pc-parsa] [main] INFO o.s.s.c.ThreadPoolTaskExecutor@initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-03-27 12:15:08.219] [pc-parsa] [main] INFO o.s.b.a.e.web.EndpointLinksResolver@<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2021-03-27 12:15:08.275] [pc-parsa] [main] INFO o.a.coyote.http11.Http11NioProtocol@log:173 - Starting ProtocolHandler ["http-nio-8484"]
+[2021-03-27 12:15:08.284] [pc-parsa] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@start:220 - Tomcat started on port(s): 8484 (http) with context path ''
+[2021-03-27 12:15:08.303] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarted:61 - Started RoleBaseAuthenticationServiceApplication in 4.963 seconds (JVM running for 5.794)
+[2021-03-27 12:15:08.309] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:89 - 
+----------------------------------------------------------
+	Application 'rolebaseservice' is running! Access URLs:
+	Local: 		http://localhost:8484/
+	External: 	http://172.31.15.22:8484/
+	Profile(s): 	[dev]
+----------------------------------------------------------
+[2021-03-27 12:15:08.309] [pc-parsa] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:108 - 
+----------------------------------------------------------
+	Config Server: 	Not found or not setup for this application
+----------------------------------------------------------
+[2021-03-27 12:15:08.852] [pc-parsa] [RMI TCP Connection(1)-172.31.15.22] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-03-27 12:15:08.853] [pc-parsa] [RMI TCP Connection(1)-172.31.15.22] INFO o.s.web.servlet.DispatcherServlet@initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+[2021-03-27 12:15:08.855] [pc-parsa] [RMI TCP Connection(1)-172.31.15.22] INFO o.s.web.servlet.DispatcherServlet@initServletBean:547 - Completed initialization in 2 ms
+[2021-03-27 12:15:13.200] [pc-parsa] [http-nio-8484-exec-1] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 12:15:13 IRDT 2021
+[2021-03-27 12:37:46.578] [pc-parsa] [http-nio-8484-exec-3] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 12:37:46 IRDT 2021
+[2021-03-27 12:37:47.464] [pc-parsa] [http-nio-8484-exec-4] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 12:37:47 IRDT 2021
+[2021-03-27 12:37:48.287] [pc-parsa] [http-nio-8484-exec-7] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 12:37:48 IRDT 2021
+[2021-03-27 12:45:33.247] [pc-parsa] [http-nio-8484-exec-9] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 12:45:33 IRDT 2021
+[2021-03-27 12:45:33.812] [pc-parsa] [http-nio-8484-exec-10] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 12:45:33 IRDT 2021
+[2021-03-27 12:45:34.335] [pc-parsa] [http-nio-8484-exec-3] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 12:45:34 IRDT 2021
+[2021-03-27 12:45:34.888] [pc-parsa] [http-nio-8484-exec-4] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 12:45:34 IRDT 2021
+[2021-03-27 12:46:22.125] [pc-parsa] [http-nio-8484-exec-7] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 12:46:22 IRDT 2021
+[2021-03-27 12:46:22.982] [pc-parsa] [http-nio-8484-exec-8] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 12:46:22 IRDT 2021
+[2021-03-27 13:13:01.476] [pc-parsa] [http-nio-8484-exec-1] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 13:13:01 IRDT 2021
+[2021-03-27 13:13:02.242] [pc-parsa] [http-nio-8484-exec-3] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 13:13:02 IRDT 2021
+[2021-03-27 13:38:12.942] [pc-parsa] [http-nio-8484-exec-5] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 13:38:12 IRDT 2021
+[2021-03-27 13:38:13.526] [pc-parsa] [http-nio-8484-exec-7] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 13:38:13 IRDT 2021
+[2021-03-27 13:38:14.029] [pc-parsa] [http-nio-8484-exec-8] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 13:38:14 IRDT 2021
+[2021-03-27 13:38:14.467] [pc-parsa] [http-nio-8484-exec-1] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 13:38:14 IRDT 2021
+[2021-03-27 13:46:30.557] [pc-parsa] [http-nio-8484-exec-3] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 13:46:30 IRDT 2021
+[2021-03-27 13:46:31.379] [pc-parsa] [http-nio-8484-exec-4] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 13:46:31 IRDT 2021
+[2021-03-27 13:46:32.197] [pc-parsa] [http-nio-8484-exec-5] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 13:46:32 IRDT 2021
+[2021-03-27 14:01:37.986] [pc-parsa] [SpringContextShutdownHook] INFO o.s.s.c.ThreadPoolTaskExecutor@shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-03-27 14:01:37.987] [pc-parsa] [SpringContextShutdownHook] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 14:01:37.990] [pc-parsa] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:350 - HikariPool-1 - Shutdown initiated...
+[2021-03-27 14:01:38.001] [pc-parsa] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:352 - HikariPool-1 - Shutdown completed.
+[2021-03-27 21:03:29.276] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarting:55 - Starting RoleBaseAuthenticationServiceApplication using Java 11.0.2 on parisa-pc with PID 13775 (/home/parisa/IdeaProjects/microservice/role-base-authentication-service/target/classes started by parisa in /home/parisa/IdeaProjects/microservice/role-base-authentication-service)
+[2021-03-27 21:03:29.279] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStartupProfileInfo:664 - The following profiles are active: @activatedProperties@
+[2021-03-27 21:03:29.360] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Fetching config from server at : http://localhost:8888/
+[2021-03-27 21:03:29.360] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Located environment: name=rolebaseservice, profiles=[@activatedProperties@], label=null, version=null, state=null
+[2021-03-27 21:03:31.207] [parisa-pc] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2021-03-27 21:03:31.366] [parisa-pc] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:188 - Finished Spring Data repository scanning in 145 ms. Found 3 JPA repository interfaces.
+[2021-03-27 21:03:31.752] [parisa-pc] [main] INFO o.s.cloud.context.scope.GenericScope@setSerializationId:283 - BeanFactory id=81a53907-16e7-3874-a4b0-c9c019c83a39
+[2021-03-27 21:03:33.221] [parisa-pc] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@initialize:108 - Tomcat initialized with port(s): 8484 (http)
+[2021-03-27 21:03:33.235] [parisa-pc] [main] INFO o.a.coyote.http11.Http11NioProtocol@log:173 - Initializing ProtocolHandler ["http-nio-8484"]
+[2021-03-27 21:03:33.236] [parisa-pc] [main] INFO o.a.catalina.core.StandardService@log:173 - Starting service [Tomcat]
+[2021-03-27 21:03:33.236] [parisa-pc] [main] INFO o.a.catalina.core.StandardEngine@log:173 - Starting Servlet engine: [Apache Tomcat/9.0.43]
+[2021-03-27 21:03:33.644] [parisa-pc] [main] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring embedded WebApplicationContext
+[2021-03-27 21:03:33.645] [parisa-pc] [main] INFO o.s.b.w.s.c.ServletWebServerApplicationContext@prepareWebApplicationContext:289 - Root WebApplicationContext: initialization completed in 4281 ms
+[2021-03-27 21:03:35.050] [parisa-pc] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:110 - HikariPool-1 - Starting...
+[2021-03-27 21:03:35.271] [parisa-pc] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:123 - HikariPool-1 - Start completed.
+[2021-03-27 21:03:35.324] [parisa-pc] [main] INFO o.h.jpa.internal.util.LogHelper@logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2021-03-27 21:03:35.405] [parisa-pc] [main] INFO org.hibernate.Version@logVersion:44 - HHH000412: Hibernate ORM core version 5.4.28.Final
+[2021-03-27 21:03:35.644] [parisa-pc] [main] INFO o.h.annotations.common.Version@<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-03-27 21:03:35.823] [parisa-pc] [main] INFO org.hibernate.dialect.Dialect@<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2021-03-27 21:03:37.416] [parisa-pc] [main] INFO o.h.e.t.j.p.i.JtaPlatformInitiator@initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-03-27 21:03:37.431] [parisa-pc] [main] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 21:03:37.657] [parisa-pc] [main] WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration@openEntityManagerInViewInterceptor:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2021-03-27 21:03:37.894] [parisa-pc] [main] INFO o.s.b.a.s.s.UserDetailsServiceAutoConfiguration@getOrDeducePassword:86 - 
+
+Using generated security password: 8f7e79fa-f383-452d-8638-96c2ce37dbdc
+
+[2021-03-27 21:03:38.042] [parisa-pc] [main] INFO o.s.s.web.DefaultSecurityFilterChain@<init>:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d1a763c, org.springframework.security.web.context.SecurityContextPersistenceFilter@2f9d47a3, org.springframework.security.web.header.HeaderWriterFilter@738ed8d3, org.springframework.security.web.authentication.logout.LogoutFilter@2e268c19, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@715ea64a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a9e2c3b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d5ec2ed, org.springframework.security.web.session.SessionManagementFilter@67c912d3, org.springframework.security.web.access.ExceptionTranslationFilter@24b05292, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6ff05f85]
+[2021-03-27 21:03:38.494] [parisa-pc] [main] INFO o.s.s.c.ThreadPoolTaskExecutor@initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-03-27 21:03:40.724] [parisa-pc] [main] INFO o.s.cloud.commons.util.InetUtils@convertAddress:170 - Cannot determine local hostname
+[2021-03-27 21:03:40.905] [parisa-pc] [main] INFO o.s.b.a.e.web.EndpointLinksResolver@<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2021-03-27 21:03:41.050] [parisa-pc] [main] INFO o.a.coyote.http11.Http11NioProtocol@log:173 - Starting ProtocolHandler ["http-nio-8484"]
+[2021-03-27 21:03:41.082] [parisa-pc] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@start:220 - Tomcat started on port(s): 8484 (http) with context path ''
+[2021-03-27 21:03:42.084] [parisa-pc] [main] INFO o.s.cloud.commons.util.InetUtils@convertAddress:170 - Cannot determine local hostname
+[2021-03-27 21:03:42.144] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarted:61 - Started RoleBaseAuthenticationServiceApplication in 15.098 seconds (JVM running for 18.221)
+[2021-03-27 21:03:42.159] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:89 - 
+----------------------------------------------------------
+	Application 'rolebaseservice' is running! Access URLs:
+	Local: 		http://localhost:8484/
+	External: 	http://127.0.1.1:8484/
+	Profile(s): 	[@activatedProperties@]
+----------------------------------------------------------
+[2021-03-27 21:03:42.160] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:108 - 
+----------------------------------------------------------
+	Config Server: 	Not found or not setup for this application
+----------------------------------------------------------
+[2021-03-27 21:03:42.702] [parisa-pc] [RMI TCP Connection(5)-127.0.0.1] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-03-27 21:03:42.703] [parisa-pc] [RMI TCP Connection(5)-127.0.0.1] INFO o.s.web.servlet.DispatcherServlet@initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+[2021-03-27 21:03:42.707] [parisa-pc] [RMI TCP Connection(5)-127.0.0.1] INFO o.s.web.servlet.DispatcherServlet@initServletBean:547 - Completed initialization in 3 ms
+[2021-03-27 21:08:45.380] [parisa-pc] [http-nio-8484-exec-1] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 21:08:45 IRDT 2021
+[2021-03-27 21:09:24.850] [parisa-pc] [http-nio-8484-exec-3] INFO c.m.s.r.controller.TestController@helloWorld:45 - /elkdemo - &gt; Hello user ! Sat Mar 27 21:09:24 IRDT 2021
+[2021-03-27 22:53:35.359] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Fetching config from server at : http://localhost:8888/
+[2021-03-27 22:53:35.363] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Located environment: name=rolebaseservice, profiles=[dev], label=null, version=null, state=null
+[2021-03-27 22:53:35.406] [parisa-pc] [main] ERROR o.s.boot.SpringApplication@reportFailure:856 - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - Failed to create parent directories for [/home/parisa/IdeaProjects/microservice/role-base-authentication-service/file:/home/parisa/IdeaProjects/microservice/role-base-authentication-service/../elk/logstash*.log]
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - openFile(file:///home/parisa/IdeaProjects/microservice/role-base-authentication-service/../elk/logstash*.log,true) call failed. java.io.FileNotFoundException: file:/home/parisa/IdeaProjects/microservice/role-base-authentication-service/../elk/logstash*.log (No such file or directory)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:327)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at com.modernisc.servicegateway.rolebase.RoleBaseAuthenticationServiceApplication.main(RoleBaseAuthenticationServiceApplication.java:62)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - Failed to create parent directories for [/home/parisa/IdeaProjects/microservice/role-base-authentication-service/file:/home/parisa/IdeaProjects/microservice/role-base-authentication-service/../elk/logstash*.log]
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - openFile(file:///home/parisa/IdeaProjects/microservice/role-base-authentication-service/../elk/logstash*.log,true) call failed. java.io.FileNotFoundException: file:/home/parisa/IdeaProjects/microservice/role-base-authentication-service/../elk/logstash*.log (No such file or directory)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:312)
+	... 16 common frames omitted
+[2021-03-27 23:01:08.340] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Fetching config from server at : http://localhost:8888/
+[2021-03-27 23:01:08.344] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Located environment: name=rolebaseservice, profiles=[dev], label=null, version=null, state=null
+[2021-03-27 23:01:08.402] [parisa-pc] [main] ERROR o.s.boot.SpringApplication@reportFailure:856 - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - Failed to create parent directories for [/home/parisa/IdeaProjects/microservice/role-base-authentication-service/file:/home/parisa/IdeaProjects/microservice/role-base-authentication-service/../elk/logstash*.log]
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - openFile(file:///home/parisa/IdeaProjects/microservice/role-base-authentication-service/../elk/logstash*.log,true) call failed. java.io.FileNotFoundException: file:/home/parisa/IdeaProjects/microservice/role-base-authentication-service/../elk/logstash*.log (No such file or directory)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:327)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at com.modernisc.servicegateway.rolebase.RoleBaseAuthenticationServiceApplication.main(RoleBaseAuthenticationServiceApplication.java:62)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - Failed to create parent directories for [/home/parisa/IdeaProjects/microservice/role-base-authentication-service/file:/home/parisa/IdeaProjects/microservice/role-base-authentication-service/../elk/logstash*.log]
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - openFile(file:///home/parisa/IdeaProjects/microservice/role-base-authentication-service/../elk/logstash*.log,true) call failed. java.io.FileNotFoundException: file:/home/parisa/IdeaProjects/microservice/role-base-authentication-service/../elk/logstash*.log (No such file or directory)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:312)
+	... 16 common frames omitted
+[2021-03-27 23:02:16.824] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarting:55 - Starting RoleBaseAuthenticationServiceApplication using Java 11.0.2 on parisa-pc with PID 35934 (/home/parisa/IdeaProjects/microservice/role-base-authentication-service/target/classes started by parisa in /home/parisa/IdeaProjects/microservice/role-base-authentication-service)
+[2021-03-27 23:02:16.827] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStartupProfileInfo:664 - The following profiles are active: dev
+[2021-03-27 23:02:16.896] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Fetching config from server at : http://localhost:8888/
+[2021-03-27 23:02:16.897] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Located environment: name=rolebaseservice, profiles=[dev], label=null, version=null, state=null
+[2021-03-27 23:02:18.770] [parisa-pc] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2021-03-27 23:02:18.871] [parisa-pc] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:188 - Finished Spring Data repository scanning in 86 ms. Found 3 JPA repository interfaces.
+[2021-03-27 23:02:19.299] [parisa-pc] [main] INFO o.s.cloud.context.scope.GenericScope@setSerializationId:283 - BeanFactory id=dafcf6b0-b059-3ab4-a31c-ee888c5cf01c
+[2021-03-27 23:02:20.208] [parisa-pc] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@initialize:108 - Tomcat initialized with port(s): 8484 (http)
+[2021-03-27 23:02:20.220] [parisa-pc] [main] INFO o.a.catalina.core.StandardService@log:173 - Starting service [Tomcat]
+[2021-03-27 23:02:20.221] [parisa-pc] [main] INFO o.a.catalina.core.StandardEngine@log:173 - Starting Servlet engine: [Apache Tomcat/9.0.43]
+[2021-03-27 23:02:20.683] [parisa-pc] [main] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring embedded WebApplicationContext
+[2021-03-27 23:02:20.685] [parisa-pc] [main] INFO o.s.b.w.s.c.ServletWebServerApplicationContext@prepareWebApplicationContext:289 - Root WebApplicationContext: initialization completed in 3785 ms
+[2021-03-27 23:02:21.063] [parisa-pc] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:110 - HikariPool-1 - Starting...
+[2021-03-27 23:02:21.453] [parisa-pc] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:123 - HikariPool-1 - Start completed.
+[2021-03-27 23:02:21.461] [parisa-pc] [main] INFO o.s.b.a.h.H2ConsoleAutoConfiguration@lambda$h2Console$0:68 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./h2-database/h2/data/roleBaseService'
+[2021-03-27 23:02:22.564] [parisa-pc] [main] INFO o.h.jpa.internal.util.LogHelper@logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2021-03-27 23:02:22.644] [parisa-pc] [main] INFO org.hibernate.Version@logVersion:44 - HHH000412: Hibernate ORM core version 5.4.28.Final
+[2021-03-27 23:02:23.175] [parisa-pc] [main] INFO o.h.annotations.common.Version@<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-03-27 23:02:23.453] [parisa-pc] [main] INFO org.hibernate.dialect.Dialect@<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2021-03-27 23:02:24.666] [parisa-pc] [main] INFO o.h.e.t.j.p.i.JtaPlatformInitiator@initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-03-27 23:02:24.680] [parisa-pc] [main] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 23:02:24.959] [parisa-pc] [main] WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration@openEntityManagerInViewInterceptor:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2021-03-27 23:02:25.240] [parisa-pc] [main] INFO o.s.b.a.s.s.UserDetailsServiceAutoConfiguration@getOrDeducePassword:86 - 
+
+Using generated security password: 6467a613-4523-45f3-b8dd-ae8551820b3e
+
+[2021-03-27 23:02:25.386] [parisa-pc] [main] INFO o.s.s.web.DefaultSecurityFilterChain@<init>:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@48900d4a, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d180628, org.springframework.security.web.header.HeaderWriterFilter@301b89e1, org.springframework.security.web.authentication.logout.LogoutFilter@24673720, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36e9fd4f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@57e35236, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ba90170, org.springframework.security.web.session.SessionManagementFilter@16c3388e, org.springframework.security.web.access.ExceptionTranslationFilter@365c8a47, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4ab959e8]
+[2021-03-27 23:02:25.704] [parisa-pc] [main] INFO o.s.s.c.ThreadPoolTaskExecutor@initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-03-27 23:02:27.155] [parisa-pc] [main] INFO o.s.b.a.e.web.EndpointLinksResolver@<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2021-03-27 23:02:27.290] [parisa-pc] [main] WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext@refresh:590 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8484 is already in use
+[2021-03-27 23:02:27.296] [parisa-pc] [main] INFO o.s.s.c.ThreadPoolTaskExecutor@shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-03-27 23:02:27.298] [parisa-pc] [main] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 23:02:27.305] [parisa-pc] [main] INFO com.zaxxer.hikari.HikariDataSource@close:350 - HikariPool-1 - Shutdown initiated...
+[2021-03-27 23:02:27.387] [parisa-pc] [main] INFO com.zaxxer.hikari.HikariDataSource@close:352 - HikariPool-1 - Shutdown completed.
+[2021-03-27 23:02:27.396] [parisa-pc] [main] INFO o.a.catalina.core.StandardService@log:173 - Stopping service [Tomcat]
+[2021-03-27 23:02:27.429] [parisa-pc] [main] INFO o.s.b.a.l.ConditionEvaluationReportLoggingListener@logMessage:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[2021-03-27 23:02:27.450] [parisa-pc] [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter@report:40 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8484 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8484 or configure this application to listen on another port.
+
+[2021-03-27 23:02:39.269] [parisa-pc] [SpringContextShutdownHook] INFO o.s.s.c.ThreadPoolTaskExecutor@shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-03-27 23:02:39.271] [parisa-pc] [SpringContextShutdownHook] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 23:02:39.272] [parisa-pc] [SpringContextShutdownHook] INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl@perform:526 - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[2021-03-27 23:02:39.296] [parisa-pc] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:350 - HikariPool-1 - Shutdown initiated...
+[2021-03-27 23:02:39.304] [parisa-pc] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:352 - HikariPool-1 - Shutdown completed.
+[2021-03-27 23:05:12.971] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarting:55 - Starting RoleBaseAuthenticationServiceApplication using Java 11.0.2 on parisa-pc with PID 36681 (/home/parisa/IdeaProjects/microservice/role-base-authentication-service/target/classes started by parisa in /home/parisa/IdeaProjects/microservice/role-base-authentication-service)
+[2021-03-27 23:05:12.974] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStartupProfileInfo:664 - The following profiles are active: dev
+[2021-03-27 23:05:13.041] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Fetching config from server at : http://localhost:8888/
+[2021-03-27 23:05:13.042] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Located environment: name=rolebaseservice, profiles=[dev], label=null, version=null, state=null
+[2021-03-27 23:05:14.511] [parisa-pc] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2021-03-27 23:05:14.601] [parisa-pc] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:188 - Finished Spring Data repository scanning in 77 ms. Found 3 JPA repository interfaces.
+[2021-03-27 23:05:14.996] [parisa-pc] [main] INFO o.s.cloud.context.scope.GenericScope@setSerializationId:283 - BeanFactory id=dafcf6b0-b059-3ab4-a31c-ee888c5cf01c
+[2021-03-27 23:05:15.879] [parisa-pc] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@initialize:108 - Tomcat initialized with port(s): 8484 (http)
+[2021-03-27 23:05:15.895] [parisa-pc] [main] INFO o.a.catalina.core.StandardService@log:173 - Starting service [Tomcat]
+[2021-03-27 23:05:15.896] [parisa-pc] [main] INFO o.a.catalina.core.StandardEngine@log:173 - Starting Servlet engine: [Apache Tomcat/9.0.43]
+[2021-03-27 23:05:16.015] [parisa-pc] [main] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring embedded WebApplicationContext
+[2021-03-27 23:05:16.016] [parisa-pc] [main] INFO o.s.b.w.s.c.ServletWebServerApplicationContext@prepareWebApplicationContext:289 - Root WebApplicationContext: initialization completed in 2972 ms
+[2021-03-27 23:05:16.370] [parisa-pc] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:110 - HikariPool-1 - Starting...
+[2021-03-27 23:05:16.836] [parisa-pc] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:123 - HikariPool-1 - Start completed.
+[2021-03-27 23:05:16.854] [parisa-pc] [main] INFO o.s.b.a.h.H2ConsoleAutoConfiguration@lambda$h2Console$0:68 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./h2-database/h2/data/roleBaseService'
+[2021-03-27 23:05:17.825] [parisa-pc] [main] INFO o.h.jpa.internal.util.LogHelper@logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2021-03-27 23:05:17.917] [parisa-pc] [main] INFO org.hibernate.Version@logVersion:44 - HHH000412: Hibernate ORM core version 5.4.28.Final
+[2021-03-27 23:05:18.091] [parisa-pc] [main] INFO o.h.annotations.common.Version@<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-03-27 23:05:18.240] [parisa-pc] [main] INFO org.hibernate.dialect.Dialect@<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2021-03-27 23:05:19.472] [parisa-pc] [main] INFO o.h.e.t.j.p.i.JtaPlatformInitiator@initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-03-27 23:05:19.489] [parisa-pc] [main] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 23:05:19.724] [parisa-pc] [main] WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration@openEntityManagerInViewInterceptor:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2021-03-27 23:05:20.019] [parisa-pc] [main] INFO o.s.b.a.s.s.UserDetailsServiceAutoConfiguration@getOrDeducePassword:86 - 
+
+Using generated security password: 2e77257e-4389-4ea8-9874-d17a6cac8916
+
+[2021-03-27 23:05:20.260] [parisa-pc] [main] INFO o.s.s.web.DefaultSecurityFilterChain@<init>:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d7f4cbb, org.springframework.security.web.context.SecurityContextPersistenceFilter@173da924, org.springframework.security.web.header.HeaderWriterFilter@60515ab1, org.springframework.security.web.authentication.logout.LogoutFilter@5e2525fe, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@502dc93a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@701a79b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6cf34b88, org.springframework.security.web.session.SessionManagementFilter@1d0f03f6, org.springframework.security.web.access.ExceptionTranslationFilter@45f32b12, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d5ec2ed]
+[2021-03-27 23:05:20.745] [parisa-pc] [main] INFO o.s.s.c.ThreadPoolTaskExecutor@initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-03-27 23:05:23.094] [parisa-pc] [main] INFO o.s.b.a.e.web.EndpointLinksResolver@<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2021-03-27 23:05:23.416] [parisa-pc] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@start:220 - Tomcat started on port(s): 8484 (http) with context path ''
+[2021-03-27 23:05:23.499] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarted:61 - Started RoleBaseAuthenticationServiceApplication in 12.533 seconds (JVM running for 14.937)
+[2021-03-27 23:05:23.513] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:89 - 
+----------------------------------------------------------
+	Application 'rolebaseservice' is running! Access URLs:
+	Local: 		http://localhost:8484/
+	External: 	http://127.0.1.1:8484/
+	Profile(s): 	[dev]
+----------------------------------------------------------
+[2021-03-27 23:05:23.514] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:108 - 
+----------------------------------------------------------
+	Config Server: 	Not found or not setup for this application
+----------------------------------------------------------
+[2021-03-27 23:05:24.145] [parisa-pc] [RMI TCP Connection(2)-127.0.0.1] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-03-27 23:05:24.184] [parisa-pc] [RMI TCP Connection(2)-127.0.0.1] INFO o.s.web.servlet.DispatcherServlet@initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+[2021-03-27 23:05:24.189] [parisa-pc] [RMI TCP Connection(2)-127.0.0.1] INFO o.s.web.servlet.DispatcherServlet@initServletBean:547 - Completed initialization in 4 ms
+[2021-03-27 23:22:42.672] [parisa-pc] [SpringContextShutdownHook] INFO o.s.s.c.ThreadPoolTaskExecutor@shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-03-27 23:22:42.678] [parisa-pc] [SpringContextShutdownHook] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 23:22:42.690] [parisa-pc] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:350 - HikariPool-1 - Shutdown initiated...
+[2021-03-27 23:22:42.706] [parisa-pc] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:352 - HikariPool-1 - Shutdown completed.
+[2021-03-27 23:22:50.486] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Fetching config from server at : http://localhost:8888/
+[2021-03-27 23:22:50.489] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Located environment: name=rolebaseservice, profiles=[dev], label=null, version=null, state=null
+[2021-03-27 23:22:50.528] [parisa-pc] [main] ERROR o.s.boot.SpringApplication@reportFailure:856 - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:327)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:63)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:111)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:62)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:362)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:320)
+	at com.modernisc.servicegateway.rolebase.RoleBaseAuthenticationServiceApplication.main(RoleBaseAuthenticationServiceApplication.java:62)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:312)
+	... 16 common frames omitted
+[2021-03-27 23:23:20.681] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarting:55 - Starting RoleBaseAuthenticationServiceApplication using Java 11.0.2 on parisa-pc with PID 40799 (/home/parisa/IdeaProjects/microservice/role-base-authentication-service/target/classes started by parisa in /home/parisa/IdeaProjects/microservice/role-base-authentication-service)
+[2021-03-27 23:23:20.685] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStartupProfileInfo:664 - The following profiles are active: dev
+[2021-03-27 23:23:20.753] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Fetching config from server at : http://localhost:8888/
+[2021-03-27 23:23:20.754] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Located environment: name=rolebaseservice, profiles=[dev], label=null, version=null, state=null
+[2021-03-27 23:23:22.502] [parisa-pc] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2021-03-27 23:23:22.583] [parisa-pc] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:188 - Finished Spring Data repository scanning in 67 ms. Found 3 JPA repository interfaces.
+[2021-03-27 23:23:23.051] [parisa-pc] [main] INFO o.s.cloud.context.scope.GenericScope@setSerializationId:283 - BeanFactory id=dafcf6b0-b059-3ab4-a31c-ee888c5cf01c
+[2021-03-27 23:23:23.953] [parisa-pc] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@initialize:108 - Tomcat initialized with port(s): 8484 (http)
+[2021-03-27 23:23:23.963] [parisa-pc] [main] INFO o.a.catalina.core.StandardService@log:173 - Starting service [Tomcat]
+[2021-03-27 23:23:23.964] [parisa-pc] [main] INFO o.a.catalina.core.StandardEngine@log:173 - Starting Servlet engine: [Apache Tomcat/9.0.43]
+[2021-03-27 23:23:24.077] [parisa-pc] [main] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring embedded WebApplicationContext
+[2021-03-27 23:23:24.078] [parisa-pc] [main] INFO o.s.b.w.s.c.ServletWebServerApplicationContext@prepareWebApplicationContext:289 - Root WebApplicationContext: initialization completed in 3321 ms
+[2021-03-27 23:23:24.371] [parisa-pc] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:110 - HikariPool-1 - Starting...
+[2021-03-27 23:23:24.811] [parisa-pc] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:123 - HikariPool-1 - Start completed.
+[2021-03-27 23:23:24.820] [parisa-pc] [main] INFO o.s.b.a.h.H2ConsoleAutoConfiguration@lambda$h2Console$0:68 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./h2-database/h2/data/roleBaseService'
+[2021-03-27 23:23:26.046] [parisa-pc] [main] INFO o.h.jpa.internal.util.LogHelper@logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2021-03-27 23:23:26.140] [parisa-pc] [main] INFO org.hibernate.Version@logVersion:44 - HHH000412: Hibernate ORM core version 5.4.28.Final
+[2021-03-27 23:23:26.370] [parisa-pc] [main] INFO o.h.annotations.common.Version@<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-03-27 23:23:26.525] [parisa-pc] [main] INFO org.hibernate.dialect.Dialect@<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2021-03-27 23:23:27.555] [parisa-pc] [main] INFO o.h.e.t.j.p.i.JtaPlatformInitiator@initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-03-27 23:23:27.568] [parisa-pc] [main] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 23:23:27.822] [parisa-pc] [main] WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration@openEntityManagerInViewInterceptor:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2021-03-27 23:23:28.094] [parisa-pc] [main] INFO o.s.b.a.s.s.UserDetailsServiceAutoConfiguration@getOrDeducePassword:86 - 
+
+Using generated security password: 3e88e4a7-0862-4ca5-acc6-dd2a08c6df0e
+
+[2021-03-27 23:23:28.268] [parisa-pc] [main] INFO o.s.s.web.DefaultSecurityFilterChain@<init>:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2df40273, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f80b25a, org.springframework.security.web.header.HeaderWriterFilter@54ee423f, org.springframework.security.web.authentication.logout.LogoutFilter@6f404bc6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1aee0f49, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1899c7ae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@49467fc6, org.springframework.security.web.session.SessionManagementFilter@72f91c91, org.springframework.security.web.access.ExceptionTranslationFilter@46c7e6c0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@adb15df]
+[2021-03-27 23:23:28.544] [parisa-pc] [main] INFO o.s.s.c.ThreadPoolTaskExecutor@initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-03-27 23:23:29.968] [parisa-pc] [main] INFO o.s.b.a.e.web.EndpointLinksResolver@<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2021-03-27 23:23:30.158] [parisa-pc] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@start:220 - Tomcat started on port(s): 8484 (http) with context path ''
+[2021-03-27 23:23:30.237] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarted:61 - Started RoleBaseAuthenticationServiceApplication in 11.517 seconds (JVM running for 13.809)
+[2021-03-27 23:23:30.251] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:89 - 
+----------------------------------------------------------
+	Application 'rolebaseservice' is running! Access URLs:
+	Local: 		http://localhost:8484/
+	External: 	http://127.0.1.1:8484/
+	Profile(s): 	[dev]
+----------------------------------------------------------
+[2021-03-27 23:23:30.252] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:108 - 
+----------------------------------------------------------
+	Config Server: 	Not found or not setup for this application
+----------------------------------------------------------
+[2021-03-27 23:23:30.597] [parisa-pc] [RMI TCP Connection(1)-127.0.0.1] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-03-27 23:23:30.599] [parisa-pc] [RMI TCP Connection(1)-127.0.0.1] INFO o.s.web.servlet.DispatcherServlet@initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+[2021-03-27 23:23:30.602] [parisa-pc] [RMI TCP Connection(1)-127.0.0.1] INFO o.s.web.servlet.DispatcherServlet@initServletBean:547 - Completed initialization in 2 ms
+[2021-03-27 23:26:41.666] [parisa-pc] [SpringContextShutdownHook] INFO o.s.s.c.ThreadPoolTaskExecutor@shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2021-03-27 23:26:41.670] [parisa-pc] [SpringContextShutdownHook] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@destroy:651 - Closing JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 23:26:41.683] [parisa-pc] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:350 - HikariPool-1 - Shutdown initiated...
+[2021-03-27 23:26:41.741] [parisa-pc] [SpringContextShutdownHook] INFO com.zaxxer.hikari.HikariDataSource@close:352 - HikariPool-1 - Shutdown completed.
+[2021-03-27 23:26:48.968] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarting:55 - Starting RoleBaseAuthenticationServiceApplication using Java 11.0.2 on parisa-pc with PID 41710 (/home/parisa/IdeaProjects/microservice/role-base-authentication-service/target/classes started by parisa in /home/parisa/IdeaProjects/microservice/role-base-authentication-service)
+[2021-03-27 23:26:48.972] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStartupProfileInfo:664 - The following profiles are active: dev
+[2021-03-27 23:26:49.060] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Fetching config from server at : http://localhost:8888/
+[2021-03-27 23:26:49.061] [parisa-pc] [main] INFO o.s.b.c.config.ConfigDataLoader@logTo:255 - Located environment: name=rolebaseservice, profiles=[dev], label=null, version=null, state=null
+[2021-03-27 23:26:50.602] [parisa-pc] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:128 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2021-03-27 23:26:50.688] [parisa-pc] [main] INFO o.s.d.r.c.RepositoryConfigurationDelegate@registerRepositoriesIn:188 - Finished Spring Data repository scanning in 69 ms. Found 3 JPA repository interfaces.
+[2021-03-27 23:26:51.131] [parisa-pc] [main] INFO o.s.cloud.context.scope.GenericScope@setSerializationId:283 - BeanFactory id=0538a447-4c58-3fc9-b1ef-fe60d013fd21
+[2021-03-27 23:26:51.951] [parisa-pc] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@initialize:108 - Tomcat initialized with port(s): 8484 (http)
+[2021-03-27 23:26:51.962] [parisa-pc] [main] INFO o.a.catalina.core.StandardService@log:173 - Starting service [Tomcat]
+[2021-03-27 23:26:51.963] [parisa-pc] [main] INFO o.a.catalina.core.StandardEngine@log:173 - Starting Servlet engine: [Apache Tomcat/9.0.43]
+[2021-03-27 23:26:52.117] [parisa-pc] [main] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring embedded WebApplicationContext
+[2021-03-27 23:26:52.118] [parisa-pc] [main] INFO o.s.b.w.s.c.ServletWebServerApplicationContext@prepareWebApplicationContext:289 - Root WebApplicationContext: initialization completed in 3049 ms
+[2021-03-27 23:26:52.435] [parisa-pc] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:110 - HikariPool-1 - Starting...
+[2021-03-27 23:26:52.750] [parisa-pc] [main] INFO com.zaxxer.hikari.HikariDataSource@getConnection:123 - HikariPool-1 - Start completed.
+[2021-03-27 23:26:52.759] [parisa-pc] [main] INFO o.s.b.a.h.H2ConsoleAutoConfiguration@lambda$h2Console$0:68 - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./h2-database/h2/data/roleBaseService'
+[2021-03-27 23:26:53.690] [parisa-pc] [main] INFO o.h.jpa.internal.util.LogHelper@logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+[2021-03-27 23:26:53.770] [parisa-pc] [main] INFO org.hibernate.Version@logVersion:44 - HHH000412: Hibernate ORM core version 5.4.28.Final
+[2021-03-27 23:26:54.055] [parisa-pc] [main] INFO o.h.annotations.common.Version@<clinit>:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[2021-03-27 23:26:54.217] [parisa-pc] [main] INFO org.hibernate.dialect.Dialect@<init>:175 - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[2021-03-27 23:26:55.215] [parisa-pc] [main] INFO o.h.e.t.j.p.i.JtaPlatformInitiator@initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2021-03-27 23:26:55.229] [parisa-pc] [main] INFO o.s.o.j.LocalContainerEntityManagerFactoryBean@buildNativeEntityManagerFactory:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2021-03-27 23:26:55.447] [parisa-pc] [main] WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration@openEntityManagerInViewInterceptor:221 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2021-03-27 23:26:55.644] [parisa-pc] [main] INFO o.s.b.a.s.s.UserDetailsServiceAutoConfiguration@getOrDeducePassword:86 - 
+
+Using generated security password: 0fb087b6-4f93-4969-9a3f-e02c02520578
+
+[2021-03-27 23:26:55.784] [parisa-pc] [main] INFO o.s.s.web.DefaultSecurityFilterChain@<init>:51 - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@331da721, org.springframework.security.web.context.SecurityContextPersistenceFilter@276b68af, org.springframework.security.web.header.HeaderWriterFilter@4b19ee18, org.springframework.security.web.authentication.logout.LogoutFilter@1af29a19, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e092ca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@45ea6c24, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@335cbcbd, org.springframework.security.web.session.SessionManagementFilter@75128cf, org.springframework.security.web.access.ExceptionTranslationFilter@307eb95f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@502dc93a]
+[2021-03-27 23:26:56.057] [parisa-pc] [main] INFO o.s.s.c.ThreadPoolTaskExecutor@initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+[2021-03-27 23:26:57.673] [parisa-pc] [main] INFO o.s.b.a.e.web.EndpointLinksResolver@<init>:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+[2021-03-27 23:26:57.815] [parisa-pc] [main] INFO o.s.b.w.e.tomcat.TomcatWebServer@start:220 - Tomcat started on port(s): 8484 (http) with context path ''
+[2021-03-27 23:26:57.895] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logStarted:61 - Started RoleBaseAuthenticationServiceApplication in 11.03 seconds (JVM running for 13.087)
+[2021-03-27 23:26:57.916] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:89 - 
+----------------------------------------------------------
+	Application 'rolebaseservice' is running! Access URLs:
+	Local: 		http://localhost:8484/
+	External: 	http://127.0.1.1:8484/
+	Profile(s): 	[dev]
+----------------------------------------------------------
+[2021-03-27 23:26:57.917] [parisa-pc] [main] INFO c.m.s.r.RoleBaseAuthenticationServiceApplication@logApplicationStartup:108 - 
+----------------------------------------------------------
+	Config Server: 	Not found or not setup for this application
+----------------------------------------------------------
+[2021-03-27 23:26:58.285] [parisa-pc] [RMI TCP Connection(2)-127.0.0.1] INFO o.a.c.c.C.[Tomcat].[localhost].[/]@log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-03-27 23:26:58.287] [parisa-pc] [RMI TCP Connection(2)-127.0.0.1] INFO o.s.web.servlet.DispatcherServlet@initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+[2021-03-27 23:26:58.291] [parisa-pc] [RMI TCP Connection(2)-127.0.0.1] INFO o.s.web.servlet.DispatcherServlet@initServletBean:547 - Completed initialization in 3 ms

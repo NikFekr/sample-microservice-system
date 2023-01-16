@@ -1,0 +1,33 @@
+#FROM 127.0.0.1:8082/openjdk:11-slim as packager
+
+#RUN apt-get update \
+# && apt-get install -y curl \
+# && apt-get install -y telnet
+
+FROM 127.0.0.1:8082/alpine:latest as packager
+
+RUN apk update \
+ && apk --update --no-cache add busybox-extras \
+ && apk add --no-cache curl
+# && apk add --no-cache telnet
+
+ENV LANG en_US.UTF-8
+
+
+# Environment variables for the builder image.
+# Required to validate that you are using the correct file
+
+ENV JAVA_PKG=./jdk11/jdk-11.0.11 \
+	JAVA_HOME=/usr/java/jdk-11
+
+
+COPY $JAVA_PKG /usr/java/jdk-11
+
+
+# Default to UTF-8 file.encoding
+ENV LANG en_US.UTF-8
+
+ENV JAVA_VERSION=11.0.11 \
+	JAVA_HOME=/usr/java/jdk-11
+
+ENV	PATH $JAVA_HOME/bin:$PATH

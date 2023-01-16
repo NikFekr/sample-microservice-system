@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>library-api-consumer-one</module>
+        <module>library-app</module>
+        <module>library-service</module>
+        <module>library-api-impl</module>
+        <module>library-utility</module>
+        <module>auth-service-proxy</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.sample.library</groupId>
+    <artifactId>library</artifactId>
+    <version>1.0</version>
+    <name>library</name>
+    <description>Prepare sample library service</description>
+
+    <properties>
+        <java.version>11</java.version>
+        <springfox-swagger.version>3.0.0</springfox-swagger.version>
+        <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
+        <bouncycastle.version>1.64</bouncycastle.version>
+        <jasypt.version>1.9.3</jasypt.version>
+        <jasypt-spring-boot.version>3.0.3</jasypt-spring-boot.version>
+        <springdoc.version>1.5.6</springdoc.version>
+        <hibernate-validator.version>7.0.1.Final</hibernate-validator.version>
+        <keycloak.version>12.0.4</keycloak.version>
+        <spring-cloud.version>2020.0.2</spring-cloud.version>
+
+        <library-api-consumer-one.version>${project.version}</library-api-consumer-one.version>
+        <library-app.version>${project.version}</library-app.version>
+        <library-service.version>${project.version}</library-service.version>
+        <library-api-impl.version>${project.version}</library-api-impl.version>
+        <library-utility.version>${project.version}</library-utility.version>
+        <auth-service-proxy.version>${project.version}</auth-service-proxy.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.keycloak</groupId>
+                <artifactId>keycloak-spring-boot-starter</artifactId>
+                <version>${keycloak.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.keycloak.bom</groupId>-->
+<!--                <artifactId>keycloak-adapter-bom</artifactId>-->
+<!--                <version>${keycloak.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+
+<!--            <dependency>-->
+<!--                <groupId>org.projectlombok</groupId>-->
+<!--                <artifactId>lombok</artifactId>-->
+<!--                <version>${lombok.version}</version>-->
+<!--                <optional>true</optional>-->
+<!--            </dependency>-->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15on</artifactId>
+                <version>${bouncycastle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jasypt</groupId>
+                <artifactId>jasypt</artifactId>
+                <version>${jasypt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt-spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-webmvc-core</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-security</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>20210307</version>
+            </dependency>
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>8.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+<!--                <plugin>-->
+<!--                    <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                    <version>3.8.1</version>-->
+<!--                    <configuration>-->
+<!--                        <source>${java.version}</source>-->
+<!--                        <target>${java.version}</target>-->
+<!--                        <compilerArgs>-->
+<!--                            <arg>-parameters</arg>-->
+<!--                        </compilerArgs>-->
+<!--                    </configuration>-->
+<!--                </plugin>-->
+
+<!--                <plugin>-->
+<!--                    <artifactId>maven-deploy-plugin</artifactId>-->
+<!--                    <version>2.8.2</version>-->
+<!--                </plugin>-->
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-toolchains-plugin</artifactId>-->
+<!--                <version>3.0.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>toolchain</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <toolchains>-->
+<!--                                <jdk>-->
+<!--                                    <version>17</version>-->
+<!--                                </jdk>-->
+<!--                            </toolchains>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+
+        </plugins>
+    </build>
+
+</project>
